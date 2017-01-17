@@ -28,13 +28,19 @@ public class ListExercicios {
 		WebElement segundoExericio = driver.findElement(By.linkText("Localizando Elementos"));
 		//verificardor do elemento
 		assertTrue(segundoExericio.getText().contains("Localizando Elementos")); 
+		//acessando a nova tela
 		segundoExericio.click();
-	}
-	
-	@After
-	public void finaliza(){
-		driver.quit();
+		// localizando o campo e-mail e enviando resultado
+		WebElement campoEmail = driver.findElement(By.id("email"));
+		campoEmail.sendKeys("novoteste@company.org");
+		campoEmail.submit();
 		
 	}
+	
+/*	@After
+	public void finaliza(){
+		driver.quit();
+	
+	}*/
 
 }
